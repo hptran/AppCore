@@ -73,8 +73,8 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMm-O6-rLy">
-                                    <rect key="frame" x="217" y="104" width="91" height="35"/>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMm-O6-rLy">
+                                    <rect key="frame" x="217" y="114" width="91" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="35" id="4un-T8-0WC"/>
                                         <constraint firstAttribute="width" constant="91" id="RSb-ed-7cA"/>
@@ -94,6 +94,20 @@
                                         <constraint firstAttribute="height" constant="1" id="1lX-59-jUb"/>
                                     </constraints>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqz-qk-No7">
+                                    <rect key="frame" x="217" y="71" width="80" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="tsp-Js-NdF"/>
+                                        <constraint firstAttribute="width" constant="91" id="zXB-jA-deW"/>
+                                    </constraints>
+                                    <state key="normal" title="Sign Out">
+                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="signOut:" destination="3ca-8Q-UW8" eventType="touchUpInside" id="u20-kc-WHY"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -312,6 +326,7 @@
                         <outlet property="participationLabel" destination="bb2-UZ-Wan" id="y7l-mx-QG2"/>
                         <outlet property="profileImageButton" destination="wbP-3z-2pl" id="hp2-iW-hH9"/>
                         <outlet property="rightBarButton" destination="fF4-PR-bA8" id="Fyo-HO-yHb"/>
+                        <outlet property="signOutButton" destination="Bqz-qk-No7" id="dJh-0g-mpb"/>
                         <outlet property="versionLabel" destination="Vxa-dH-1Bp" id="ppv-g9-RMd"/>
                     </connections>
                 </tableViewController>
