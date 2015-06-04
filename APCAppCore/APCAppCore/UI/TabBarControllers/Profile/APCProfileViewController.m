@@ -1354,16 +1354,38 @@ static NSString * const kAPCRightDetailTableViewCellIdentifier = @"APCRightDetai
 
 - (IBAction)signOut:(id) __unused sender
 {
-    if (![self canSignOut]) {
-        return;
-    }
+//    if (![self canSignOut]) {
+//        return;
+//    }
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Sign Out", @"") message:NSLocalizedString(@"Are you sure you want to sign out?", nil) preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *signOutAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Sign Out", @"") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * __unused action) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-        [self performSelector:@selector(logOut)];
-#pragma clang diagnostic pop
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wundeclared-selector"
+//        [self performSelector:@selector(logOut)];
+//#pragma clang diagnostic pop
+       
+        //reset user information
+        self.user.loggedOut = YES;
+        
+        //find document directory (which store user data)
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *directory = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+        //delete all files in the document directory
+        NSFileManager *fileMgr = [NSFileManager defaultManager];
+        NSArray *fileArray = [fileMgr contentsOfDirectoryAtPath:directory error:nil];
+        for (NSString *filename in fileArray)  {
+            
+            [fileMgr removeItemAtPath:[directory stringByAppendingPathComponent:filename] error:NULL];
+        }
+        
+
+        //switch to the initial storyboard of the App (old version: don't need to use the following code)
+//        APCStudyOverviewViewController *viewController = [[UIStoryboard storyboardWithName:@"APCOnboarding" bundle:[NSBundle appleCoreBundle]] instantiateViewControllerWithIdentifier:@"StudyOverviewVC"];
+//        APCAppDelegate * appDelegate = (APCAppDelegate*)[UIApplication sharedApplication].delegate;
+//        appDelegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
+        
+        
     }];
     [alertController addAction:signOutAction];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"") style:UIAlertActionStyleCancel handler:^(UIAlertAction * __unused action) {

@@ -288,7 +288,6 @@
 		CF130B781A9E8DCD002DA023 /* APCSetupButtonTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CF130B751A9E8DCD002DA023 /* APCSetupButtonTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF130B791A9E8DCD002DA023 /* APCSetupButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF130B761A9E8DCD002DA023 /* APCSetupButtonTableViewCell.m */; };
 		CF130B7A1A9E8DCD002DA023 /* APCSetupButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF130B771A9E8DCD002DA023 /* APCSetupButtonTableViewCell.xib */; };
-		CF61A3801B0A53490014AD1A /* APCDemographicUploader.h in Resources */ = {isa = PBXBuildFile; fileRef = CF61A37F1B0A53490014AD1A /* APCDemographicUploader.h */; };
 		CF64CF2D1AE860CC000795B5 /* APCDemographicUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = CF64CF2B1AE860CC000795B5 /* APCDemographicUploader.m */; };
 		CF7945861AA7AEC70019160F /* APCFrequencyEverydayTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7945831AA7AEC70019160F /* APCFrequencyEverydayTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF7945871AA7AEC70019160F /* APCFrequencyEverydayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7945841AA7AEC70019160F /* APCFrequencyEverydayTableViewCell.m */; };
@@ -3279,7 +3278,7 @@
 				TargetAttributes = {
 					F5179B2819D09128001DCCB7 = {
 						CreatedOnToolsVersion = 6.0.1;
-						DevelopmentTeam = NL3PRC58UN;
+						DevelopmentTeam = AT9PR6Q444;
 					};
 					F5179B3319D09128001DCCB7 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -3544,7 +3543,6 @@
 				7B751D581B0A61A600E77BD2 /* NSDictionary+APCStringify.m in Sources */,
 				F5B947B81A73272C0034C522 /* APCStepProgressBar+Appearance.m in Sources */,
 				6C8646411AF8077300B46C49 /* APCCorrelationsSelectorViewController.m in Sources */,
-				7BDF4D2B1AE5403E00ACC1F8 /* NSDictionary+APCStringify.m in Sources */,
 				CFFDEDFB1A95734000B25581 /* APCSetupTableViewCell.m in Sources */,
 				7B8C20141AA3AB8600BFEFDA /* APCTheme.m in Sources */,
 				0894654E1A8C1F0200A983AC /* APCInsightBarView.m in Sources */,

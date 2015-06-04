@@ -81,6 +81,7 @@ static NSString *const kConsentSignatureImagePropertyName = @"consentSignatureIm
 
 static NSString *const kSignedUpKey = @"SignedUp";
 static NSString *const kSignedInKey = @"SignedIn";
+static NSString *const kLoggedOutKey = @"LoggedOut";
 
 @interface APCUser ()
 {
@@ -625,6 +626,15 @@ static NSString *const kSignedInKey = @"SignedIn";
 - (BOOL)isLoggedOut
 {
     return self.email.length && !self.isSignedIn && !self.isSignedUp;
+}
+
+- (void)setLoggedOut:(BOOL)loggedOut
+{
+    [[NSUserDefaults standardUserDefaults] setBool:loggedOut forKey:kLoggedOutKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (kLoggedOutKey) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:(NSString *)APCUserLogOutNotification object:nil];
+    }
 }
 
 @end

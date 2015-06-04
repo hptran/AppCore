@@ -32,6 +32,8 @@
 // 
  
 #import "APCUserInfoViewController.h"
+#import "APCStudyOverviewViewController.h"
+#import <Foundation/Foundation.h>
 
 @class APCUser;
 
